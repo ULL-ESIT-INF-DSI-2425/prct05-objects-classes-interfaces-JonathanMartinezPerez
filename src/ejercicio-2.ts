@@ -25,7 +25,7 @@ export class Song implements ISong {
 /**
  * Interfaz para álbum
  */
-interface IAlbum {
+export interface IAlbum {
     name: string;
     year: number;
     songs: Song[];
