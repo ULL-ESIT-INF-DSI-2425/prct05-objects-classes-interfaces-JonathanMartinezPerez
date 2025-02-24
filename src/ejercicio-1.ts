@@ -113,12 +113,18 @@ export function getEffectiveness(attacker: PokemonType, defender: PokemonType): 
     [PokemonType.Agua]: {
       [PokemonType.Hierba]: 0.5,
       [PokemonType.Electrico]: 0.5,
+      [PokemonType.Fuego]: 2,
     },
     [PokemonType.Hierba]: {
       [PokemonType.Agua]: 2,
       [PokemonType.Electrico]: 1,
+      [PokemonType.Fuego]: 0.5,
     },
-    // Para Electrico se asume que cualquier ataque es neutral.
+    [PokemonType.Electrico]: {
+      [PokemonType.Agua]: 2,
+      [PokemonType.Hierba]: 1,
+      [PokemonType.Fuego]: 1,
+    },
   };
 
   return effectivenessMap[attacker]?.[defender] ?? 1;
