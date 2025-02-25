@@ -72,4 +72,17 @@ describe("Combat Class", () => {
     combat.start();
     expect(consoleSpy).toHaveBeenCalled();
   });
+
+  test("should simulate a combat", () => {
+    const stats1: PokemonStats = { attack: 50, defense: 50, speed: 50, hp: 100 };
+    const stats2: PokemonStats = { attack: 35, defense: 40, speed: 55, hp: 75 };
+    const pikachu = new Pokemon("Bulbasaur", 6, 0.4, PokemonType.Hierba, stats1);
+    const charmander = new Pokemon("Squirtle", 8.5, 0.6, PokemonType.Agua, stats2);
+    const combat = new Combat(pikachu, charmander);
+
+    const consoleSpy = vi.spyOn(console, 'log');
+    combat.start();
+    expect(consoleSpy).toHaveBeenCalled();
+  });
+  
 });
