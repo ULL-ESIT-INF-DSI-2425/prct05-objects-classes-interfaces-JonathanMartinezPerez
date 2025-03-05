@@ -1,5 +1,5 @@
 import { describe, expect, test, vi } from "vitest";
-import { Coche, Moto } from "../src/ejercicioclase";
+import { Coche, Moto } from "../src/vehiculos";
 
 describe("Las clases deben funcionar correctamente", () => {
     test("Coche", () => {
